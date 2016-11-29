@@ -2,8 +2,11 @@ import React, { Component } from 'react';
 
 import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
+
+import { categories } from './constants';
+import AppMenuItem from './AppMenuItem';
+import AppMenuWookieeSwitch from './AppMenuWookieeSwitch';
 
 const style = {
   maxWidth: '100%',
@@ -11,18 +14,18 @@ const style = {
 
 class AppMenu extends Component {
   render() {
+
+  	const menuCategories = categories.map((categorie, index) =>
+  		<AppMenuItem key={index} categorie={categorie}/>
+  	);
+
     return (
       <div style={this.props.containersStyle}>
 		    <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
 		      <Menu style={style}>
-		        <MenuItem primaryText="People" />
-						<MenuItem primaryText="Planet" />
-						<MenuItem primaryText="Film" />
-						<MenuItem primaryText="Species" />
-						<MenuItem primaryText="Starship" />
-						<MenuItem primaryText="Vehicle" />
+		      	{menuCategories}
        			<Divider />
-						<MenuItem primaryText="Wookiee Switch" disabled={true}/>
+            <AppMenuWookieeSwitch />
 		      </Menu>
 		    </Paper>
       </div>

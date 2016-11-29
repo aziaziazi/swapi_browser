@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
+const titleStyle = {
+	textAlign:'right'
+}
+
 class AppTitle extends Component {
   render() {
     return (
       <div style={this.props.containersStyle}>
-        <h1>SWAPI Bowser</h1>
+        <h1 style={titleStyle}>SWAPI Bowser</h1>
       </div>
     );
   }

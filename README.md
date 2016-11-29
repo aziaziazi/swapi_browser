@@ -14,8 +14,6 @@ Your app should browse the API resources in a data table(pagination) with a brie
 
 # Notes
 
-https://github.com/search?q=swapi+react+Material&ref=searchresults&type=Code&utf8=%E2%9C%93
-
 "If your React app uses AJAX to fetch initial data from an API, then componentDidMount is the place to make that AJAX call."
 
 https://fr.pinterest.com/camillegabrieli/data-tables/

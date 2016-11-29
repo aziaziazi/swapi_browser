@@ -9,8 +9,8 @@ class AppDetails extends Component {
       	<Card rounded={this.props.rounded} zDepth={this.props.zDepth}>
       	  <CardTitle title="Luke Skywalker" subtitle="people" />
 		      <CardText>
-			      <p><b>height</b> 1.72 m</p>
-			      <p><b>mass</b> 77 Kg</p>
+			      <p><b>height</b> 172</p>
+			      <p><b>mass</b> 77</p>
 			      <p><b>hair_color</b> Blond</p>
 			      <p><b>skin_color</b> Caucasian</p>
 			      <p><b>eye_color</b> Blue</p>
@@ -24,3 +24,5 @@ class AppDetails extends Component {
 }
 
 export default AppDetails;
+
+//TODO use material ui lists ?

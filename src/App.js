@@ -4,10 +4,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import AppMenu from './AppMenu';
 import AppTitle from './AppTitle';
-import DataTable from './DataTable';
+import AppTable from './AppTable';
 import AppDetails from './AppDetails';
 
-const flexboxContainer={
+const flexboxContainerStyle={
   width:'100%',
   display: 'inline-flex',
   flexDirection: 'row',
@@ -22,7 +22,7 @@ const containersStyle={
   // borderbox?
   minWidth: '10em',
   maxWidth:'250px',
-  margin: '4em 1.5em 0em 1.5em',
+  margin: '4em 1.5em 1.5em 1.5em',
   flexGrow: '1',
   flexBasis:'0',
 }
@@ -34,11 +34,15 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div style={flexboxContainer}>
-          <AppTitle containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
-          <AppMenu containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
-          <DataTable containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
-          <AppDetails containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
+        <div style={flexboxContainerStyle}>
+          <AppTitle
+            containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
+          <AppMenu
+            containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
+          <AppTable
+            containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
+          <AppDetails
+            containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
         </div>
       </MuiThemeProvider>
     );
@@ -46,3 +50,5 @@ class App extends Component {
 }
 
 export default App;
+
+//TODO pass the containerStyle directly here ?
