@@ -23,7 +23,7 @@ class DataTable extends Component {
   render() {
     return (
       <div style={this.props.containersStyle}>
-      	<Paper>
+      	<Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
 				  <Table>
 				  	<TableBody displayRowCheckbox={false} >
 				  		{NamesOfEntries}

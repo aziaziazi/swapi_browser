@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Title extends Component {
+class AppTitle extends Component {
   render() {
     return (
       <div style={this.props.containersStyle}>
@@ -10,4 +10,4 @@ class Title extends Component {
   }
 }
 
-export default Title;
+export default AppTitle;

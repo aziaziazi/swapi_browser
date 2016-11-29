@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import {Card, CardTitle, CardText} from 'material-ui/Card';
 
-class Details extends Component {
+class AppDetails extends Component {
   render() {
     return (
       <div style={this.props.containersStyle}>
-      	<Card>
+      	<Card rounded={this.props.rounded} zDepth={this.props.zDepth}>
       	  <CardTitle title="Luke Skywalker" subtitle="people" />
 		      <CardText>
 			      <p><b>height</b> 1.72 m</p>
@@ -23,4 +23,4 @@ class Details extends Component {
   }
 }
 
-export default Details;
+export default AppDetails;
