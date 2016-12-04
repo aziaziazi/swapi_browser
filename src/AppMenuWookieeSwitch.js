@@ -8,7 +8,7 @@ const style = {
 class AppMenuWookieeSwitch extends Component {
   render() {
     return (
-		      <MenuItem style={style} primaryText='Wookiee Switch' />
+      <MenuItem style={style} primaryText='Wookiee Switch' />
     );
   }
 }

@@ -8,9 +8,9 @@ const arrowsStyle = {
 }
 
 const TableRowColumnStyle = {
-	display:'flex',
- 	flexDirection: 'row',
- 	flexWrap: 'nowrap',
+  display:'flex',
+  flexDirection: 'row',
+  flexWrap: 'nowrap',
   justifyContent: 'space-between',
   paddingLeft: '0.6em',
   paddingRight: '0.6em'
@@ -19,14 +19,14 @@ const TableRowColumnStyle = {
 class AppTableButtons extends Component {
   render() {
     return (
-			<TableRowColumn style={TableRowColumnStyle}>
-		    <IconButton style={arrowsStyle}>
-		    	<HardwareKeyboardArrowLeft />
-		    </IconButton>
-		    <IconButton style={arrowsStyle}>
-		    	<HardwareKeyboardArrowRight />
-		    </IconButton>
-			</TableRowColumn>
+      <TableRowColumn style={TableRowColumnStyle}>
+        <IconButton style={arrowsStyle}>
+          <HardwareKeyboardArrowLeft />
+        </IconButton>
+        <IconButton style={arrowsStyle}>
+          <HardwareKeyboardArrowRight />
+        </IconButton>
+      </TableRowColumn>
     );
   }
 }

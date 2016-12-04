@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const titleStyle = {
-	textAlign:'right'
+  textAlign:'right'
 }
 
 class AppTitle extends Component {

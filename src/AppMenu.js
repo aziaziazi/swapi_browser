@@ -15,19 +15,19 @@ const style = {
 class AppMenu extends Component {
   render() {
 
-  	const menuCategories = categories.map((categorie, index) =>
-  		<AppMenuItem key={index} categorie={categorie}/>
-  	);
+    const menuCategories = categories.map((categorie, index) =>
+      <AppMenuItem key={index} categorie={categorie}/>
+    );
 
     return (
       <div style={this.props.containersStyle}>
-		    <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
-		      <Menu style={style}>
-		      	{menuCategories}
-       			<Divider />
+        <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
+          <Menu style={style}>
+            {menuCategories}
+            <Divider />
             <AppMenuWookieeSwitch />
-		      </Menu>
-		    </Paper>
+          </Menu>
+        </Paper>
       </div>
     );
   }

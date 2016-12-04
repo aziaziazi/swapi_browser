@@ -8,7 +8,7 @@ const style = {
 class AppMenuItem extends Component {
   render() {
     return (
-		      <MenuItem style={style} primaryText={this.props.categorie} />
+      <MenuItem style={style} primaryText={this.props.categorie} />
     );
   }
 }

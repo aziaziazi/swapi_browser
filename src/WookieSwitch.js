@@ -7,14 +7,14 @@ import ActionTranslate from 'material-ui/svg-icons/action/translate';
 class WookieSwitch extends Component {
   render() {
     return (
-    	<div>
-    	 	<RaisedButton
-	      	icon={<ActionTranslate />}
-	      	label="Wookiee"
-      		labelPosition="before"
-		   	/>
-  		</div>
-		);
+      <div>
+        <RaisedButton
+          icon={<ActionTranslate />}
+          label="Wookiee"
+          labelPosition="before"
+        />
+      </div>
+    );
   }
 }
 
