@@ -7,6 +7,11 @@ import mookData from './mookData';
 import AppTableEntrie from './AppTableEntrie';
 import AppTableNavigation from './AppTableNavigation';
 
+// Fix of line wide
+const TableRowFooterStyle = {
+  borderTop:'none'
+}
+
 class AppTable extends Component {
   render() {
 
@@ -22,7 +27,7 @@ class AppTable extends Component {
               {Entries}
             </TableBody>
             <TableFooter adjustForCheckbox={false}>
-              <TableRow>
+              <TableRow style={TableRowFooterStyle}>
                 <AppTableNavigation />
               </TableRow>
             </TableFooter>
