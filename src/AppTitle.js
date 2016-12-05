@@ -24,7 +24,5 @@ const AppTitle = ({containersStyle}) => {
 AppTitle.propTypes = {
   containersStyle: React.PropTypes.object.isRequired
 };
-// Does not work ? No error, even if I change 'object' with number
-
 
 export default AppTitle;

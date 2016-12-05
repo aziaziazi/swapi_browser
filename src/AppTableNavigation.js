@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import {TableRowColumn} from 'material-ui/Table';
 import IconButton from 'material-ui/IconButton';
@@ -16,19 +16,17 @@ const TableRowColumnStyle = {
   paddingRight: '0.6em'
 }
 
-class AppTableNavigation extends Component {
-  render() {
-    return (
-      <TableRowColumn style={TableRowColumnStyle}>
-        <IconButton style={arrowsStyle}>
-          <HardwareKeyboardArrowLeft />
-        </IconButton>
-        <IconButton style={arrowsStyle}>
-          <HardwareKeyboardArrowRight />
-        </IconButton>
-      </TableRowColumn>
-    );
-  }
+const AppTableNavigation = () => {
+  return (
+    <TableRowColumn style={TableRowColumnStyle}>
+      <IconButton style={arrowsStyle}>
+        <HardwareKeyboardArrowLeft />
+      </IconButton>
+      <IconButton style={arrowsStyle}>
+        <HardwareKeyboardArrowRight />
+      </IconButton>
+    </TableRowColumn>
+  );
 }
 
 export default AppTableNavigation;

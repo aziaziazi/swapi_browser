@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import {TableRow, TableRowColumn} from 'material-ui/Table';
 
-class AppTableEntrie extends Component {
-  render() {
-    return (
-      <TableRow>
-        <TableRowColumn>{this.props.entrieName}</TableRowColumn>
-      </TableRow>
-    );
-  }
+const AppTableEntrie = ({entrieName}) => {
+  return (
+    <TableRow>
+      <TableRowColumn>{entrieName}</TableRowColumn>
+    </TableRow>
+  );
 }
+
+AppTableEntrie.propTypes = {
+  entrieName: React.PropTypes.string.isRequired
+};
 
 export default AppTableEntrie;
