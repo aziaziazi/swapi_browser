@@ -8,8 +8,14 @@ const titleStyle = {
 // TODO : is it better to create inside AppTitle ?
 
 const AppTitle = ({containersStyle}) => {
+
+  const home = (event) => {
+    //Back home
+  }
+
   return (
-    <div style={containersStyle}>
+    <div style={containersStyle}
+          onClick={home}>
       <h1 style={titleStyle}>{title}</h1>
     </div>
   );

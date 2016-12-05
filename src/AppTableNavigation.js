@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import {TableRowColumn} from 'material-ui/Table';
 import IconButton from 'material-ui/IconButton';
-import {HardwareKeyboardArrowLeft, HardwareKeyboardArrowRight} from 'material-ui/svg-icons/index'
+import {HardwareKeyboardArrowLeft, HardwareKeyboardArrowRight} from 'material-ui/svg-icons'
 
 const arrowsStyle = {
 }
@@ -16,7 +16,7 @@ const TableRowColumnStyle = {
   paddingRight: '0.6em'
 }
 
-class AppTableButtons extends Component {
+class AppTableNavigation extends Component {
   render() {
     return (
       <TableRowColumn style={TableRowColumnStyle}>
@@ -31,4 +31,4 @@ class AppTableButtons extends Component {
   }
 }
 
-export default AppTableButtons;
+export default AppTableNavigation;

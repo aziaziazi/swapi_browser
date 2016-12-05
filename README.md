@@ -25,3 +25,5 @@ https://fr.pinterest.com/camillegabrieli/data-tables/
 - implements [wookiee translator](http://swapi.co/documentation#wookiee)
 - Use [stateless components pattern](https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc)
 - Add PropTypes
+- Use the API : https://facebook.github.io/react-native/docs/network.html or https://github.com/mzabriskie/axios
+- fix divider problem on top of wookie switch and on top of table's nav arrows 

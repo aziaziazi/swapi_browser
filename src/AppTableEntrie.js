@@ -6,7 +6,7 @@ class AppTableEntrie extends Component {
   render() {
     return (
       <TableRow>
-        <TableRowColumn>{this.props.entrie.name}</TableRowColumn>
+        <TableRowColumn>{this.props.entrieName}</TableRowColumn>
       </TableRow>
     );
   }

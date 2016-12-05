@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 
 import { categories } from './constants';
-import AppMenuItem from './AppMenuItem';
+import AppMenuCategoriesItem from './AppMenuCategoriesItem';
+
+
 
 class AppMenuCategories extends Component {
   render() {
 
     const menuCategories = categories.map((categorie, index) =>
-      <AppMenuItem key={index} categorie={categorie}/>
-    )
+      <AppMenuCategoriesItem key={index} categorie={categorie}/>
+    );
 
     return (
       <div>{menuCategories}</div>

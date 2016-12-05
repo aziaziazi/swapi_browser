@@ -3,15 +3,15 @@ import React, { Component } from 'react';
 import {Table, TableBody, TableFooter, TableRow} from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
-import MookData from './MookData';
+import mookData from './mookData';
 import AppTableEntrie from './AppTableEntrie';
-import AppTableButtons from './AppTableButtons';
+import AppTableNavigation from './AppTableNavigation';
 
 class AppTable extends Component {
   render() {
 
-    const Entries = MookData.results.map((entrie, index) =>
-      <AppTableEntrie key={index} entrie={entrie}/>
+    const Entries = mookData.results.map((entrie, index) =>
+      <AppTableEntrie key={index} entrieName={entrie.name}/>
     );
 
     return (
@@ -23,7 +23,7 @@ class AppTable extends Component {
             </TableBody>
             <TableFooter adjustForCheckbox={false}>
               <TableRow>
-                <AppTableButtons />
+                <AppTableNavigation />
               </TableRow>
             </TableFooter>
            </Table>

@@ -1,4 +1,4 @@
-const MookData = {
+const mookData = {
   "count": 87,
   "next": "http://swapi.co/api/people/?page=2",
   "previous": null,
@@ -277,4 +277,4 @@ const MookData = {
   ]
 }
 
-export default MookData;
+export default mookData;

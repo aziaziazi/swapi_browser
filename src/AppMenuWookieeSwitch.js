@@ -1,16 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import MenuItem from 'material-ui/MenuItem';
 
 const style = {
 };
-
-class AppMenuWookieeSwitch extends Component {
-  render() {
-    return (
-      <MenuItem style={style} primaryText='Wookiee Switch' />
-    );
-  }
+const AppMenuWookieeSwitch = () => {
+  return (
+    <MenuItem style={style} primaryText='Wookiee Switch' />
+  );
 }
 
 export default AppMenuWookieeSwitch;

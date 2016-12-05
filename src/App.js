@@ -35,14 +35,10 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div style={flexboxContainerStyle}>
-          <AppTitle
-            containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
-          <AppMenu
-            containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
-          <AppTable
-            containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
-          <AppDetails
-            containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
+          <AppTitle containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
+          <AppMenu containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
+          <AppTable containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
+          <AppDetails containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
         </div>
       </MuiThemeProvider>
     );
