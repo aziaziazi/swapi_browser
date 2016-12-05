@@ -13,7 +13,7 @@ const flexboxContainerStyle={
   flexDirection: 'row',
   flexWrap: 'wrap',
   justifyContent: 'center',
-  alignItems:  'flex-start'
+  alignItems: 'flex-start'
 }
 
 const containersStyle={

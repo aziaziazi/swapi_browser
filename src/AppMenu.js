@@ -4,9 +4,8 @@ import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
 import Divider from 'material-ui/Divider';
 
-import { categories } from './constants';
-import AppMenuItem from './AppMenuItem';
 import AppMenuWookieeSwitch from './AppMenuWookieeSwitch';
+import AppMenuCategories from './AppMenuCategories';
 
 const style = {
   maxWidth: '100%',
@@ -14,16 +13,11 @@ const style = {
 
 class AppMenu extends Component {
   render() {
-
-    const menuCategories = categories.map((categorie, index) =>
-      <AppMenuItem key={index} categorie={categorie}/>
-    );
-
     return (
       <div style={this.props.containersStyle}>
         <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
           <Menu style={style}>
-            {menuCategories}
+            <AppMenuCategories />
             <Divider />
             <AppMenuWookieeSwitch />
           </Menu>
