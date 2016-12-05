@@ -1,17 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+import { title } from './constants';
 
 const titleStyle = {
   textAlign:'right'
 }
+// TODO : is it better to create inside AppTitle ?
 
-class AppTitle extends Component {
-  render() {
-    return (
-      <div style={this.props.containersStyle}>
-        <h1 style={titleStyle}>SWAPI Bowser</h1>
-      </div>
-    );
-  }
-}
+const AppTitle = ({containersStyle}) => {
+  return (
+    <div style={containersStyle}>
+      <h1 style={titleStyle}>{title}</h1>
+    </div>
+  );
+};
+
+AppTitle.propTypes = {
+  containersStyle: React.PropTypes.object.isRequired
+};
+// Does not work ? No error, even if I change 'object' with number
+
 
 export default AppTitle;

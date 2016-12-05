@@ -24,3 +24,4 @@ https://fr.pinterest.com/camillegabrieli/data-tables/
 - Add element detail
 - implements [wookiee translator](http://swapi.co/documentation#wookiee)
 - Use [stateless components pattern](https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc)
+- Add PropTypes

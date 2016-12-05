@@ -1,3 +1,5 @@
+export const title = "SWAPI Browser";
+
 export const categories = [
   'People',
   'Planet',
@@ -5,4 +7,4 @@ export const categories = [
   'Species',
   'Starship',
   'Vehicle'
-]
+];
