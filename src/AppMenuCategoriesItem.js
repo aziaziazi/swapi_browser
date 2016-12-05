@@ -11,5 +11,9 @@ const AppMenuCategoriesItem = ({categorie}) => {
   );
 }
 
+AppMenuCategoriesItem.propTypes = {
+  categorie: React.PropTypes.string.isRequired
+}
+
 export default AppMenuCategoriesItem;
 //TODO fix divider

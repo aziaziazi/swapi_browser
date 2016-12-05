@@ -4,6 +4,7 @@ import MenuItem from 'material-ui/MenuItem';
 
 const style = {
 };
+
 const AppMenuWookieeSwitch = () => {
   return (
     <MenuItem style={style} primaryText='Wookiee Switch' />

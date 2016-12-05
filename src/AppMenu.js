@@ -27,5 +27,11 @@ class AppMenu extends Component {
   }
 }
 
+AppMenu.propTypes = {
+  containersStyle: React.PropTypes.object.isRequired,
+  rounded: React.PropTypes.bool.isRequired,
+  zDepth: React.PropTypes.number.isRequired
+}
+
 export default AppMenu;
 //TODO fix divider

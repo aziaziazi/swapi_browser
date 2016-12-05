@@ -33,6 +33,12 @@ class AppTable extends Component {
   }
 }
 
+AppTable.propTypes = {
+  containersStyle: React.PropTypes.object.isRequired,
+  rounded: React.PropTypes.bool.isRequired,
+  zDepth: React.PropTypes.number.isRequired
+}
+
 export default AppTable;
 
 //<IconButton iconClassName="muidocs-icon-custom-github" />
