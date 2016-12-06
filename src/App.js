@@ -7,6 +7,8 @@ import AppTitle from './AppTitle';
 import AppTable from './AppTable';
 import AppDetails from './AppDetails';
 
+import getData from './DataFetching';
+
 const flexboxContainerStyle={
   width:'100%',
   display: 'inline-flex',
@@ -44,6 +46,9 @@ class App extends Component {
     );
   }
 }
+
+// Test
+getData()
 
 export default App;
 

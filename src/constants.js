@@ -8,3 +8,5 @@ export const categories = [
   'Starship',
   'Vehicle'
 ];
+
+export const baseURL = 'http://swapi.co/api/'
