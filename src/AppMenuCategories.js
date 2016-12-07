@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 
-import { categories } from './constants';
 import AppMenuCategoriesItem from './AppMenuCategoriesItem';
-
-
 
 class AppMenuCategories extends Component {
   render() {
-
-    const menuCategories = categories.map((categorie, index) =>
+    const menuCategories = this.props.categories.map((categorie, index) =>
       <AppMenuCategoriesItem key={index} categorie={categorie}/>
     );
 
@@ -16,6 +12,10 @@ class AppMenuCategories extends Component {
       <div>{menuCategories}</div>
     )
   }
+}
+
+AppMenuCategories.propTypes = {
+  categories: React.PropTypes.array.isRequired,
 }
 
 export default AppMenuCategories;

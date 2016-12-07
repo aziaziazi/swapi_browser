@@ -6,24 +6,51 @@ import Divider from 'material-ui/Divider';
 
 import AppMenuWookieeSwitch from './AppMenuWookieeSwitch';
 import AppMenuCategories from './AppMenuCategories';
+import { getDataCategories } from './DataFetching';
+
+// Test
 
 const style = {
   maxWidth: '100%',
 };
 
+let categoriesName = [];
+
 class AppMenu extends Component {
+  constructor(props, context) {
+    super(props, context);
+    this.state = {
+      categories : null
+    }
+  }
+
+  componentDidMount() {
+    getDataCategories()
+      .then(data => {
+        this.setState({categories: data});
+      //TODO should I catch error here too ?
+    });
+  }
+
   render() {
-    return (
-      <div style={this.props.containersStyle}>
-        <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
-          <Menu style={style}>
-            <AppMenuCategories />
-            <Divider />
-            <AppMenuWookieeSwitch />
-          </Menu>
-        </Paper>
-      </div>
-    );
+    if (this.state.categories){
+      categoriesName = Object.keys(this.state.categories)
+
+      return (
+        <div style={this.props.containersStyle}>
+          <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
+            <Menu style={style}>
+              <AppMenuCategories categories={categoriesName}/>
+              <Divider />
+              <AppMenuWookieeSwitch />
+            </Menu>
+          </Paper>
+        </div>
+      );
+    }
+
+    return <div>Loading...</div>
+
   }
 }
 

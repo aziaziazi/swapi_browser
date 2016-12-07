@@ -1,8 +1,7 @@
 import axios from 'axios'
-
 import { baseURL } from './constants';
 
-const getDataTable = (categorie) => {
+export const getDataTable = (categorie) => {
   axios
     .get(baseURL + categorie)
     .then(function (response) {
@@ -15,4 +14,13 @@ const getDataTable = (categorie) => {
     });
 }
 
-export default getDataTable;
+export const getDataCategories = () => {
+  return axios
+    .get(baseURL)
+    .then(response => {
+      return response.data
+    })
+    .catch(error => {
+      console.log(error)
+    })
+  }

@@ -7,8 +7,6 @@ import AppTitle from './AppTitle';
 import AppTable from './AppTable';
 import AppDetails from './AppDetails';
 
-import getDataTable from './DataFetching';
-
 const flexboxContainerStyle={
   width:'100%',
   display: 'inline-flex',
@@ -46,11 +44,6 @@ class App extends Component {
     );
   }
 }
-
-const param = 'planets/'
-
-// Test
-getDataTable(param)
 
 export default App;
 
