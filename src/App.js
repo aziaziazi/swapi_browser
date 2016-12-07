@@ -17,9 +17,6 @@ const flexboxContainerStyle={
 }
 
 const containersStyle={
-  // padding: '',
-  // display: 'inline-block',
-  // borderbox?
   minWidth: '10em',
   maxWidth:'250px',
   margin: '4em 1.5em 1.5em 1.5em',
@@ -31,6 +28,14 @@ const zDepth=2;
 const rounded=false;
 
 class App extends Component {
+    constructor(props) {
+    super(props);
+    this.state = {
+      currentCategorie : null,
+      currentItem: null
+    }
+  }
+
   render() {
     return (
       <MuiThemeProvider>
