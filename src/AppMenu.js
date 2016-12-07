@@ -7,8 +7,7 @@ import Divider from 'material-ui/Divider';
 import AppMenuWookieeSwitch from './AppMenuWookieeSwitch';
 import AppMenuCategories from './AppMenuCategories';
 import { getDataCategories } from './DataFetching';
-
-// Test
+import Loading from './Loading';
 
 const style = {
   maxWidth: '100%',
@@ -35,7 +34,6 @@ class AppMenu extends Component {
   render() {
     if (this.state.categories){
       categoriesName = Object.keys(this.state.categories)
-
       return (
         <div style={this.props.containersStyle}>
           <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
@@ -49,8 +47,12 @@ class AppMenu extends Component {
       );
     }
 
-    return <div>Loading...</div>
-
+    return (
+      <Loading
+        containersStyle={this.props.containersStyle}
+        rounded={this.props.rounded}
+        zDepth={this.props.zDepth} />
+    )
   }
 }
 
