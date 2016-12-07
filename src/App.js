@@ -32,7 +32,7 @@ class App extends Component {
     super(props);
     this.state = {
       currentCategorie : null,
-      currentItem: null
+      currentItem: null         // perhaps better to create an unique object with the two keys (or more)
     }
   }
 

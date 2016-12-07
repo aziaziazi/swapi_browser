@@ -20,10 +20,10 @@ https://fr.pinterest.com/camillegabrieli/data-tables/
 
 # TODO
 
-- Add pagination
-- Add element detail
 - implements [wookiee translator](http://swapi.co/documentation#wookiee)
-- Use [stateless components pattern](https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc)
-- Add PropTypes
-- Use the API : https://facebook.github.io/react-native/docs/network.html or https://github.com/mzabriskie/axios
-- fix divider problem on top of wookie switch and on top of table's nav arrows 
+- ~~Use [stateless components pattern](https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc)~~
+- ~~Add PropTypes~~
+- Use fetch() instead of axios ?
+- fix divider problem on top of wookie switch ~~and on top of data table arrows~~
+- Change State of categories and entries from containing data (en process in render function) to containing result to render (and process async in componentwillmount)
+-  fix : change of categories doesn't update table

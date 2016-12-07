@@ -14,6 +14,7 @@ const style = {
 };
 
 let categoriesName = [];
+// should I declare inside class ?
 
 class AppMenu extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class AppMenu extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     getDataCategories()
       .then(data => {
         this.setState({categories: data});
@@ -67,3 +68,4 @@ AppMenu.propTypes = {
 
 export default AppMenu;
 //TODO fix divider
+// Should I use forceUpdate() instead of state to re-render ?
