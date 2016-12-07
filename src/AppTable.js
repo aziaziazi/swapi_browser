@@ -15,6 +15,8 @@ const TableRowFooterStyle = {
 class AppTable extends Component {
   render() {
 
+    console.log('categorie => ', this.props.currentCategorie)
+
     const Entries = mookData.results.map((entrie, index) =>
       <AppTableEntrie key={index} entrieName={entrie.name}/>
     );
@@ -41,7 +43,8 @@ class AppTable extends Component {
 AppTable.propTypes = {
   containersStyle: React.PropTypes.object.isRequired,
   rounded: React.PropTypes.bool.isRequired,
-  zDepth: React.PropTypes.number.isRequired
+  zDepth: React.PropTypes.number.isRequired,
+  currentCategorie: React.PropTypes.string.isRequired
 }
 
 export default AppTable;

@@ -22,3 +22,5 @@ AppMenuCategoriesItem.propTypes = {
 
 export default AppMenuCategoriesItem;
 //TODO fix divider
+
+// TODO should I use onTouchTap instead of onClick ?

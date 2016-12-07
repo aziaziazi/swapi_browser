@@ -36,8 +36,8 @@ class App extends Component {
     }
   }
 
-  handleSelectCategorie() {
-    console.log('handleSelectCategorie is called')
+  handleSelectCategorie = (e) => {
+    this.setState({currentCategorie: e.target.innerHTML})
   }
 
   render() {
@@ -55,7 +55,8 @@ class App extends Component {
             <AppTable
               containersStyle={containersStyle}
               rounded={rounded}
-              zDepth={zDepth}/>}
+              zDepth={zDepth}
+              currentCategorie={this.state.currentCategorie}/>}
           { this.state.currentItem != null &&
             <AppDetails
               containersStyle={containersStyle}
