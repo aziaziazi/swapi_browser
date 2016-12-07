@@ -28,7 +28,7 @@ const zDepth=2;
 const rounded=false;
 
 class App extends Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       currentCategorie : null,
@@ -36,14 +36,31 @@ class App extends Component {
     }
   }
 
+  handleSelectCategorie() {
+    console.log('handleSelectCategorie is called')
+  }
+
   render() {
     return (
       <MuiThemeProvider>
         <div style={flexboxContainerStyle}>
-          <AppTitle containersStyle={containersStyle}/>
-          <AppMenu containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
-          <AppTable containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
-          <AppDetails containersStyle={containersStyle} rounded={rounded} zDepth={zDepth}/>
+            <AppTitle
+              containersStyle={containersStyle}/>
+            <AppMenu
+              containersStyle={containersStyle}
+              rounded={rounded}
+              zDepth={zDepth}
+              onSelectCategorie={this.handleSelectCategorie}/>
+          { this.state.currentCategorie != null &&
+            <AppTable
+              containersStyle={containersStyle}
+              rounded={rounded}
+              zDepth={zDepth}/>}
+          { this.state.currentItem != null &&
+            <AppDetails
+              containersStyle={containersStyle}
+              rounded={rounded}
+              zDepth={zDepth}/>}
         </div>
       </MuiThemeProvider>
     );

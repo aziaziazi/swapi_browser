@@ -38,7 +38,9 @@ class AppMenu extends Component {
         <div style={this.props.containersStyle}>
           <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
             <Menu style={style}>
-              <AppMenuCategories categories={categoriesName}/>
+              <AppMenuCategories
+                categories={categoriesName}
+                onSelectCategorie={this.props.onSelectCategorie}/>
               <Divider />
               <AppMenuWookieeSwitch />
             </Menu>
@@ -59,7 +61,8 @@ class AppMenu extends Component {
 AppMenu.propTypes = {
   containersStyle: React.PropTypes.object.isRequired,
   rounded: React.PropTypes.bool.isRequired,
-  zDepth: React.PropTypes.number.isRequired
+  zDepth: React.PropTypes.number.isRequired,
+  onSelectCategorie: React.PropTypes.func.isRequired
 }
 
 export default AppMenu;
