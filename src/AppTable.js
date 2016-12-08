@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import {Table, TableBody, TableFooter, TableRow} from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
-import mookData from './mookData';
 import AppTableEntrie from './AppTableEntrie';
 import AppTableNavigation from './AppTableNavigation';
 import { getDataTable } from './DataFetching';
@@ -15,53 +14,40 @@ const TableRowFooterStyle = {
   borderTop:'none'
 }
 
-let entriesName = [];
-// should I declare inside class ?
-
-
-
 class AppTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      entries : null
+      // entries : null
     };
   }
 
-  componentWillMount() {
-    getDataTable(this.props.currentCategorie)
+  getEntries(categorie) {
+    getDataTable(categorie)
       .then(data => {
-        this.setState({entries: data.results});
-      //TODO should I catch error here too ?
-    });
+        const rowEntries = data.results;
+        const entriesNames = [];
+        for(let i in rowEntries){
+          entriesNames.push(rowEntries[i][categorieDisplayedProperty[categorie]])
+        }
+        console.log(entriesNames)
+        // return entriesNames
+        return entriesNames.map((entrie, index) =>
+          <AppTableEntrie key={index} entrieName={entrie}/>)
+      });
   }
 
   render() {
-    if (this.state.entries){
+    var entries = this.getEntries(this.props.currentCategorie)
 
-
-
-    // THIS IS OVERCOMPLICATED
-    const displayedProperty = categorieDisplayedProperty[this.props.currentCategorie]
-    // is it ok to create that here ?
-    let thisStateEntries = this.state.entries
-    let entriesName = Object.keys(thisStateEntries) // Array of child objects
-                            .map((index) => {         // Loop the array
-                              return thisStateEntries[index][displayedProperty] // select names
-                            })
-    console.log('entriesName => ', entriesName)
-
-    const entriesToRender = entriesName.map((entrie, index) =>
-      <AppTableEntrie key={index} entrieName={entrie}/>
-    );
-
-
+    // if (true){
+      {console.log('component render')}
       return (
         <div style={this.props.containersStyle}>
           <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
             <Table>
               <TableBody displayRowCheckbox={false} >
-                {entriesToRender}
+                {entries}
               </TableBody>
               <TableFooter adjustForCheckbox={false}>
                 <TableRow style={TableRowFooterStyle}>
@@ -72,14 +58,14 @@ class AppTable extends Component {
           </Paper>
         </div>
       );
-    }
+    // }
 
-    return (
-      <Loading
-        containersStyle={this.props.containersStyle}
-        rounded={this.props.rounded}
-        zDepth={this.props.zDepth} />
-    )
+    // return (
+    //   <Loading
+    //     containersStyle={this.props.containersStyle}
+    //     rounded={this.props.rounded}
+    //     zDepth={this.props.zDepth} />
+    // )
   }
 }
 
