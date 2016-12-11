@@ -12,9 +12,9 @@ export const getDataCategories = () => {
     })
 }
 
-export const getDataTable = (categorie) => {
+export const getDataTable = (params) => {
   return axios
-    .get(baseURL + categorie)
+    .get(baseURL + params)
     .then(response => {
       return response.data
     })
