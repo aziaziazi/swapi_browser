@@ -18,6 +18,11 @@ Your app should browse the API resources in a data table(pagination) with a brie
 
 https://fr.pinterest.com/camillegabrieli/data-tables/
 
+# Test
+
+- 'npm install'
+- 'npm start'
+
 # TODO
 
 - implements [wookiee translator](http://swapi.co/documentation#wookiee)
