@@ -101,6 +101,7 @@ class AppTable extends Component {
               <TableBody displayRowCheckbox={false} >
                 {this.state.entries}
               </TableBody>
+              {(this.state.linkNext != '' || this.state.linkPrevious != '') &&
               <TableFooter adjustForCheckbox={false}>
                 <TableRow style={TableRowFooterStyle}>
                   <AppTableNavigation
@@ -109,7 +110,7 @@ class AppTable extends Component {
                     next={this.state.linkNext}
                     previous={this.state.linkPrevious}/>
                 </TableRow>
-              </TableFooter>
+              </TableFooter>}
              </Table>
           </Paper>
         </div>
