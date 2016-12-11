@@ -20,5 +20,5 @@ export const getDataTable = (params) => {
     })
     .catch(error => {
       console.log(error);
-    });
+    })
 }

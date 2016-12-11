@@ -16,14 +16,16 @@ const TableRowColumnStyle = {
   paddingRight: '0.6em'
 }
 
-const AppTableNavigation = () => {
+const AppTableNavigation = ({onClickNext, onClickPrevious, next, previous}) => {
   return (
     <TableRowColumn style={TableRowColumnStyle}>
-      <IconButton style={arrowsStyle}>
-        <HardwareKeyboardArrowLeft />
+      <IconButton style={arrowsStyle}
+                  onClick={onClickPrevious}>
+        {previous != '' && <HardwareKeyboardArrowLeft />}
       </IconButton>
-      <IconButton style={arrowsStyle}>
-        <HardwareKeyboardArrowRight />
+      <IconButton style={arrowsStyle}
+                  onClick={onClickNext}>
+        {next != '' && <HardwareKeyboardArrowRight />}
       </IconButton>
     </TableRowColumn>
   );

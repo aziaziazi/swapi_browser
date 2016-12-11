@@ -11,6 +11,7 @@ const AppMenuCategoriesItem = ({categorie, onSelectCategorie}) => {
       style={style}
       primaryText={categorie}
       onClick={onSelectCategorie}
+      selectedTextColor={'#ff4081'}
       />
   );
 }

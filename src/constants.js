@@ -1,4 +1,4 @@
-export const title = "SWAPI Browser";
+export const title = "StarWars API Browser";
 
 export const categories = [
   'People',

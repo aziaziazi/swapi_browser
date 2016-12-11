@@ -31,4 +31,5 @@ https://fr.pinterest.com/camillegabrieli/data-tables/
 - Use fetch() instead of axios ?
 - fix divider problem on top of wookie switch ~~and on top of data table arrows~~
 - Change State of categories and entries from containing data (en process in render function) to containing result to render (and process async in componentwillmount)
--  fix : change of categories doesn't update table
+-  Implement Cache for cat items (fetch next and previous items in advence ? )
+-  No loading with table updating
