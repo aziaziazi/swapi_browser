@@ -4,6 +4,7 @@ import {Table, TableBody, TableFooter, TableRow} from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
 import AppTableEntrie from './AppTableEntrie';
+import AppTableEntries from './AppTableEntries';
 import AppTableNavigation from './AppTableNavigation';
 import { getDataTable } from './DataFetching';
 import { categorieDisplayedProperty } from './constants';
@@ -14,40 +15,74 @@ const TableRowFooterStyle = {
   borderTop:'none'
 }
 
+let tableItems = []; // TODO Change name for 'tableItem' >> more logic because I render an object and no longer an array of names
+
 class AppTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // entries : null
+      entries : null
     };
   }
 
-  getEntries(categorie) {
-    getDataTable(categorie)
+  componentWillMount() {
+    getDataTable(this.props.currentCategorie)
       .then(data => {
-        const rowEntries = data.results;
-        const entriesNames = [];
-        for(let i in rowEntries){
-          entriesNames.push(rowEntries[i][categorieDisplayedProperty[categorie]])
-        }
-        console.log(entriesNames)
-        // return entriesNames
-        return entriesNames.map((entrie, index) =>
-          <AppTableEntrie key={index} entrieName={entrie}/>)
+        this.setState({
+          entries : this.makeRowsDivs(data)
+        })
+      //TODO should I catch error here too ?
       });
   }
 
-  render() {
-    var entries = this.getEntries(this.props.currentCategorie)
+  // This is not very necessary because :
+  //   - componentWillReceiveProps() already check if props and next props are similar (preventing for re-rendering by the parent)
+  //   - DOC : "componentWillReceiveProps() is not invoked if you just call this.setState()"
+  //     So I don't risk to produce a loop with setState re-rendering.
+  // I choosed to leave it anywhay because I'm not absolutely confident, and that's just a double check.
+  shouldComponentUpdate(nextProps, nextState) {
+    return nextState.entries != this.state.entries;
+  }
 
-    // if (true){
+  componentWillReceiveProps(nextProps) {
+    // nextProps.currentCategorie != this.props.currentCategorie &&
+    // Above should works too (instead of 'if(true){}'). Should I use it instead ?
+    if (nextProps.currentCategorie != this.props.currentCategorie){
+      getDataTable(nextProps.currentCategorie)
+        .then(data => {
+          this.setState({
+            entries : this.makeRowsDivs(data)
+          })
+        //TODO should I catch error here too ?
+        });
+    }
+  }
+
+  makeRowsDivs(data) {
+    const rowEntries = data.results;
+    const entriesNames = [];
+    for(let i in rowEntries){
+      entriesNames.push(rowEntries[i][categorieDisplayedProperty[this.props.currentCategorie]])
+    }
+    console.log('entriesNames => ', entriesNames)
+    return entriesNames.map((entrie, index) =>
+      <AppTableEntrie key={index} entrieName={entrie}/>)
+  }
+
+  render() {
+    console.log('Rendering')
+    console.log('this.state.entries => ', this.state.entries)
+
+    // var entries = this.getEntries(this.props.currentCategorie)
+
+    if (this.state.entries){
       {console.log('component render')}
       return (
         <div style={this.props.containersStyle}>
           <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
             <Table>
               <TableBody displayRowCheckbox={false} >
-                {entries}
+                {this.state.entries}
               </TableBody>
               <TableFooter adjustForCheckbox={false}>
                 <TableRow style={TableRowFooterStyle}>
@@ -58,14 +93,14 @@ class AppTable extends Component {
           </Paper>
         </div>
       );
-    // }
+    }
 
-    // return (
-    //   <Loading
-    //     containersStyle={this.props.containersStyle}
-    //     rounded={this.props.rounded}
-    //     zDepth={this.props.zDepth} />
-    // )
+    return (
+      <Loading
+        containersStyle={this.props.containersStyle}
+        rounded={this.props.rounded}
+        zDepth={this.props.zDepth} />
+    )
   }
 }
 

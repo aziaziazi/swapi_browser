@@ -29,12 +29,12 @@ class AppMenu extends Component {
       .then(data => {
         this.setState({categories: data});
       //TODO should I catch error here too ?
-    });
+      });
   }
 
   render() {
     if (this.state.categories){
-      categoriesName = Object.keys(this.state.categories)
+      categoriesName = Object.keys(this.state.categories) //Should I do that in Child instead ?
       return (
         <div style={this.props.containersStyle}>
           <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
