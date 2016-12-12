@@ -58,7 +58,7 @@ class App extends Component {
               zDepth={zDepth}
               onSelectCategorie={this.handleSelectCategorie}
             />
-          { this.state.currentCategorie != null &&
+          { this.state.currentCategorie != '' &&
             <AppTable
               containersStyle={containersStyle}
               rounded={rounded}
@@ -67,7 +67,7 @@ class App extends Component {
               onSelectItem={this.handleSelectItem}
             />
           }
-          { this.state.currentItem != null &&
+          { this.state.currentItem != '' &&
             <AppDetails
               containersStyle={containersStyle}
               rounded={rounded}
