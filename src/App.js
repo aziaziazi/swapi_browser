@@ -5,7 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppMenu from './AppMenu';
 import AppTitle from './AppTitle';
 import AppTable from './AppTable';
-import AppDetailsContainer from './AppDetailsContainer';
+import AppDetails from './AppDetails';
 
 const flexboxContainerStyle={
   width:'100%',
@@ -44,8 +44,6 @@ class App extends Component {
     this.setState({currentItem: arg})
   }
 
-
-
   render() {
     return (
       <MuiThemeProvider>
@@ -69,7 +67,7 @@ class App extends Component {
             />
           }
           { this.state.currentItem !== '' &&
-            <AppDetailsContainer
+            <AppDetails
               containersStyle={containersStyle}
               rounded={rounded}
               zDepth={zDepth}
