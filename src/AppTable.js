@@ -4,7 +4,7 @@ import {Table, TableBody, TableFooter, TableRow} from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
 import AppTableNavigation from './AppTableNavigation';
-import { getDataTable } from './DataFetching';
+import { getData } from './DataFetching';
 import { categorieDisplayedProperty } from './constants';
 import Loading from './Loading';
 import { baseURL } from './constants';
@@ -50,7 +50,7 @@ class AppTable extends Component {
   }
 
   updateEntriesState(param){
-    getDataTable(param)
+    getData(param)
       .then(data => {
         // Find a nicer way to do that
         let ArgNext

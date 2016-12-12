@@ -6,7 +6,7 @@ import Divider from 'material-ui/Divider';
 
 import AppMenuWookieeSwitch from './AppMenuWookieeSwitch';
 import AppMenuCategories from './AppMenuCategories';
-import { getDataCategories } from './DataFetching';
+import { getData } from './DataFetching';
 import Loading from './Loading';
 
 const style = {
@@ -24,8 +24,9 @@ class AppMenu extends Component {
     }
   }
 
+  // TODO Move that to AppMenuCategories ?
   componentWillMount() {
-    getDataCategories()
+    getData('')
       .then(data => {
         this.setState({categories: data});
       //TODO should I catch error here too ?
