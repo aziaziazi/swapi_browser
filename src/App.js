@@ -5,7 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppMenu from './AppMenu';
 import AppTitle from './AppTitle';
 import AppTable from './AppTable';
-import AppDetails from './AppDetails';
+import AppDetailsContainer from './AppDetailsContainer';
 
 const flexboxContainerStyle={
   width:'100%',
@@ -40,9 +40,10 @@ class App extends Component {
     this.setState({currentCategorie: e.target.innerHTML})
   }
 
-  handleSelectItem = (e) => {
-    this.setState({currentItem: e.target.innerHTML})
+  handleSelectItem = (arg) => {
+    this.setState({currentItem: arg})
   }
+
 
 
   render() {
@@ -68,10 +69,11 @@ class App extends Component {
             />
           }
           { this.state.currentItem !== '' &&
-            <AppDetails
+            <AppDetailsContainer
               containersStyle={containersStyle}
               rounded={rounded}
               zDepth={zDepth}
+              currentCategorie={this.state.currentCategorie}
               currentItem={this.state.currentItem}
 
             />

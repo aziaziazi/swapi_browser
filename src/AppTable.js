@@ -83,9 +83,8 @@ class AppTable extends Component {
     const entriesNames = [];
 
     for (let i = 0; i < rowEntries.length; i++){
-      entriesNames.push(rowEntries[i][categorieDisplayedProperty[this.props.currentCategorie]])
+      entriesNames.push(rowEntries[i])
     }
-
     return entriesNames.map((entrie, index) =>
       <AppTableEntrie
         key={index}

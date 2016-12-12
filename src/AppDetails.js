@@ -2,27 +2,28 @@ import React from 'react';
 
 import {Card, CardTitle, CardText} from 'material-ui/Card';
 
-const AppDetails = ({containersStyle, rounded, zDepth}) => {
+const AppDetails = ({containersStyle, rounded, zDepth, currentItem}) => {
   return (
-    <div style={containersStyle}>
       <Card rounded={rounded} zDepth={zDepth}>
-        <CardTitle title="Luke Skywalker" subtitle="people" />
+        <CardTitle
+          debug={console.log('currentItem => ',currentItem)}
+          title={currentItem.name} subtitle="" />
         <CardText>
-          <p><b>height</b> 172</p>
+          //////FILLTEXT
+          <p><b>height</b>{currentItem.height}</p>
           <p><b>mass</b> 77</p>
           <p><b>hair_color</b> Blond</p>
           <p><b>skin_color</b> Caucasian</p>
-          <p><b>eye_color</b> Blue</p>
+          <p><b>eye_color</b> {currentItem.eye_color}</p>
           <p><b>birth_year</b> 19 BBY</p>
           <p><b>gender</b> Male</p>
+          //////FILLTEXT
         </CardText>
       </Card>
-    </div>
   );
 }
 
 AppDetails.propTypes = {
-  containersStyle: React.PropTypes.object.isRequired,
   rounded: React.PropTypes.bool.isRequired,
   zDepth: React.PropTypes.number.isRequired
 };

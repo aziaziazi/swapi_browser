@@ -1,3 +1,5 @@
+// TODO use 'import { categorieDisplayedProperty } from './constants';'
+
 import React, { Component } from 'react';
 
 import {TableRow, TableRowColumn} from 'material-ui/Table';
@@ -8,8 +10,8 @@ import {TableRow, TableRowColumn} from 'material-ui/Table';
 class AppTableEntrie extends Component {
     render() {
       return (
-        <TableRow onClick={this.props.onSelectItem}>
-          <TableRowColumn>{this.props.entrie}</TableRowColumn>
+        <TableRow onClick={() => this.props.onSelectItem(this.props.entrie)}>
+          <TableRowColumn>{this.props.entrie.name}</TableRowColumn>
         </TableRow>)
     }
 }
