@@ -11,7 +11,6 @@ const AppMenuCategoriesItem = ({categorie, onSelectCategorie}) => {
       style={style}
       primaryText={categorie}
       onClick={onSelectCategorie}
-      selectedTextColor={'#ff4081'}
       />
   );
 }
@@ -22,6 +21,3 @@ AppMenuCategoriesItem.propTypes = {
 }
 
 export default AppMenuCategoriesItem;
-//TODO fix divider
-
-// TODO should I use onTouchTap instead of onClick ?

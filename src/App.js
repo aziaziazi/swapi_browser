@@ -31,8 +31,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentCategorie : null,
-      currentItem: null         // perhaps better to create an unique object with the two keys (or more)
+      currentCategorie : '',
+      currentItem: ''         // perhaps better to create an unique object with the two keys (or more)
     }
   }
 
@@ -40,28 +40,40 @@ class App extends Component {
     this.setState({currentCategorie: e.target.innerHTML})
   }
 
+  handleSelectItem = (e) => {
+    this.setState({currentItem: e.target.innerHTML})
+  }
+
+
   render() {
     return (
       <MuiThemeProvider>
         <div style={flexboxContainerStyle}>
             <AppTitle
-              containersStyle={containersStyle}/>
+              containersStyle={containersStyle}
+            />
             <AppMenu
               containersStyle={containersStyle}
               rounded={rounded}
               zDepth={zDepth}
-              onSelectCategorie={this.handleSelectCategorie}/>
+              onSelectCategorie={this.handleSelectCategorie}
+            />
           { this.state.currentCategorie != null &&
             <AppTable
               containersStyle={containersStyle}
               rounded={rounded}
               zDepth={zDepth}
-              currentCategorie={this.state.currentCategorie}/>}
+              currentCategorie={this.state.currentCategorie}
+              onSelectItem={this.handleSelectItem}
+            />
+          }
           { this.state.currentItem != null &&
             <AppDetails
               containersStyle={containersStyle}
               rounded={rounded}
-              zDepth={zDepth}/>}
+              zDepth={zDepth}
+            />
+          }
         </div>
       </MuiThemeProvider>
     );

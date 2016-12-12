@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import {Table, TableBody, TableFooter, TableRow, TableRowColumn} from 'material-ui/Table';
+import {Table, TableBody, TableFooter, TableRow} from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
 import AppTableNavigation from './AppTableNavigation';
@@ -8,6 +8,7 @@ import { getDataTable } from './DataFetching';
 import { categorieDisplayedProperty } from './constants';
 import Loading from './Loading';
 import { baseURL } from './constants';
+import AppTableEntrie from './AppTableEntrie';
 
 // Fix of line wide
 const TableRowFooterStyle = {
@@ -49,7 +50,6 @@ class AppTable extends Component {
   }
 
   updateEntriesState(param){
-    console.log('___Updating')
     getDataTable(param)
       .then(data => {
         // Find a nicer way to do that
@@ -86,19 +86,16 @@ class AppTable extends Component {
       entriesNames.push(rowEntries[i][categorieDisplayedProperty[this.props.currentCategorie]])
     }
 
-    // Choose not to create a class to have TableRow being a direct child of TableBody
-    // and allow selection functionality of Material-UI
     return entriesNames.map((entrie, index) =>
-      <TableRow
-        key={index}>
-        <TableRowColumn>{entrie}</TableRowColumn>
-      </TableRow>
+      <AppTableEntrie
+        key={index}
+        entrie={entrie}
+        onSelectItem={this.props.onSelectItem}/>
       )
   }
 
   render() {
     if (this.state.entries){
-      console.log('___Rendering')
       return (
         <div style={this.props.containersStyle}>
           <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
@@ -141,5 +138,3 @@ AppTable.propTypes = {
 }
 
 export default AppTable;
-
-//<IconButton iconClassName="muidocs-icon-custom-github" />
