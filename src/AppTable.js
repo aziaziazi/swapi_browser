@@ -15,8 +15,6 @@ const TableRowFooterStyle = {
   borderTop:'none'
 }
 
-let tableItems = [];
-
 class AppTable extends Component {
   constructor(props) {
     super(props);
@@ -34,19 +32,19 @@ class AppTable extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.currentCategorie != this.props.currentCategorie){
+    if (nextProps.currentCategorie !== this.props.currentCategorie){
       this.updateEntriesState(nextProps.currentCategorie)
     }
   }
 
   handleClickNext(){
-    if (this.state.linkNext != ''){
+    if (this.state.linkNext !== ''){
       this.updateEntriesState(this.state.linkNext)
     }
   }
 
   handleClickPrevious(){
-    if (this.state.linkPrevious != ''){
+    if (this.state.linkPrevious !== ''){
       this.updateEntriesState(this.state.linkPrevious)
     }
   }
@@ -84,16 +82,18 @@ class AppTable extends Component {
   makeRowsDivs(data) {
     const rowEntries = data.results;
     const entriesNames = [];
-    for(let i in rowEntries){
+
+    for (let i = 0; i < rowEntries.length; i++){
       entriesNames.push(rowEntries[i][categorieDisplayedProperty[this.props.currentCategorie]])
     }
+
     return entriesNames.map((entrie, index) =>
       <AppTableEntrie key={index} entrieName={entrie}/>)
   }
 
   render() {
     if (this.state.entries){
-      {console.log('___Rendering')}
+      console.log('___Rendering')
       return (
         <div style={this.props.containersStyle}>
           <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
@@ -101,7 +101,7 @@ class AppTable extends Component {
               <TableBody displayRowCheckbox={false} >
                 {this.state.entries}
               </TableBody>
-              {(this.state.linkNext != '' || this.state.linkPrevious != '') &&
+              {(this.state.linkNext !== '' || this.state.linkPrevious !== '') &&
               <TableFooter adjustForCheckbox={false}>
                 <TableRow style={TableRowFooterStyle}>
                   <AppTableNavigation

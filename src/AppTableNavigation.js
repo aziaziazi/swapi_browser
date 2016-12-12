@@ -21,11 +21,11 @@ const AppTableNavigation = ({onClickNext, onClickPrevious, next, previous}) => {
     <TableRowColumn style={TableRowColumnStyle}>
       <IconButton style={arrowsStyle}
                   onClick={onClickPrevious}>
-        {previous != '' && <HardwareKeyboardArrowLeft />}
+        {previous !== '' && <HardwareKeyboardArrowLeft />}
       </IconButton>
       <IconButton style={arrowsStyle}
                   onClick={onClickNext}>
-        {next != '' && <HardwareKeyboardArrowRight />}
+        {next !== '' && <HardwareKeyboardArrowRight />}
       </IconButton>
     </TableRowColumn>
   );

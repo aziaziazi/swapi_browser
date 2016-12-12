@@ -12,12 +12,6 @@ In this test, you will develop a React app using Material Design(Material-UI) an
 
 Your app should browse the API resources in a data table(pagination) with a brief description(max 5 columns) and when the user clicks in one of the rows, you need to show the full description of the item.
 
-# Notes
-
-"If your React app uses AJAX to fetch initial data from an API, then componentDidMount is the place to make that AJAX call."
-
-https://fr.pinterest.com/camillegabrieli/data-tables/
-
 # Test
 
 - 'npm install'
@@ -33,3 +27,9 @@ https://fr.pinterest.com/camillegabrieli/data-tables/
 - Change State of categories and entries from containing data (en process in render function) to containing result to render (and process async in componentwillmount)
 -  Implement Cache for cat items (fetch next and previous items in advence ? )
 -  No loading with table updating
+-  In AppTable, group entries, linkNext and linkPrevious states in an object
+-  Make selected cat/table appear selected
+
+# Notes
+
+https://fr.pinterest.com/camillegabrieli/data-tables/
