@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-import {Table, TableBody, TableFooter, TableRow} from 'material-ui/Table';
+import {Table, TableBody, TableFooter, TableRow, TableRowColumn} from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 
-import AppTableEntrie from './AppTableEntrie';
 import AppTableNavigation from './AppTableNavigation';
 import { getDataTable } from './DataFetching';
 import { categorieDisplayedProperty } from './constants';
@@ -87,8 +86,14 @@ class AppTable extends Component {
       entriesNames.push(rowEntries[i][categorieDisplayedProperty[this.props.currentCategorie]])
     }
 
+    // Choose not to create a class to have TableRow being a direct child of TableBody
+    // and allow selection functionality of Material-UI
     return entriesNames.map((entrie, index) =>
-      <AppTableEntrie key={index} entrieName={entrie}/>)
+      <TableRow
+        key={index}>
+        <TableRowColumn>{entrie}</TableRowColumn>
+      </TableRow>
+      )
   }
 
   render() {
@@ -98,7 +103,9 @@ class AppTable extends Component {
         <div style={this.props.containersStyle}>
           <Paper rounded={this.props.rounded} zDepth={this.props.zDepth}>
             <Table>
-              <TableBody displayRowCheckbox={false} >
+              <TableBody
+                displayRowCheckbox={false}
+                showRowHover={true}>
                 {this.state.entries}
               </TableBody>
               {(this.state.linkNext !== '' || this.state.linkPrevious !== '') &&
