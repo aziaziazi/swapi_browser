@@ -29,6 +29,8 @@ Your app should browse the API resources in a data table(pagination) with a brie
 -  No loading with table updating
 -  In AppTable, group entries, linkNext and linkPrevious states in an object
 -  Make selected cat/table appear selected
+-  Bind Details links to app currentItem state
+-  Auto Fetch pictore on google image based on name
 
 # Notes
 
