@@ -7,7 +7,7 @@ const titleStyle = {
 }
 
 const titleLinkStyle = {
-  textDecorationLine: 'none',
+  textDecoration: 'none',
   color:'inherit'
 }
 // TODO : is it better to create inside AppTitle ?
@@ -23,7 +23,7 @@ const AppTitle = ({containersStyle}) => {
           onClick={home}>
       <h1 style={titleStyle}>
         <a  target={'_blank'}
-            href={'https://swapi.co/'}
+            href={'https://github.com/aziaziazi/swapi_browser'}
             style={titleLinkStyle}>
           {title}
         </a>

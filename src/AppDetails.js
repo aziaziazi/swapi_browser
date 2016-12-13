@@ -47,7 +47,7 @@ class AppDetailContainer extends Component {
       <div style={this.props.containersStyle}>
         <Card rounded={this.props.rounded} zDepth={this.props.zDepth}>
           <CardTitle
-            title={this.props.currentItem[propertyToDisplay]} subtitle="" />
+            title={this.props.currentItem[propertyToDisplay]} subtitle={this.props.currentCategorie} />
           <CardText>
             {this.state.itemDetailsDiv}
           </CardText>
