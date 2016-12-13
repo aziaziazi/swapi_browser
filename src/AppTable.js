@@ -82,6 +82,7 @@ class AppTable extends Component {
       <AppTableEntrie
         key={index}
         entrie={entrie}
+        currentCategorie={this.props.currentCategorie}
         onSelectItem={this.props.onSelectItem}/>
       )
   }
