@@ -10,8 +10,6 @@ import { categorieDisplayedProperty } from './constants'
 class AppTableEntrie extends Component {
     render() {
       let propertyToDisplay = categorieDisplayedProperty[this.props.currentCategorie]
-      console.log('propertyToDisplay => ',propertyToDisplay);
-
       return (
         <TableRow onClick={() => this.props.onSelectItem(this.props.entrie)}>
           <TableRowColumn>{this.props.entrie[propertyToDisplay]}</TableRowColumn>

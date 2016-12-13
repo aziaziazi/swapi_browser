@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {Card, CardTitle, CardText} from 'material-ui/Card';
 
 import AppDetailsLine from './AppDetailsLine'
+import { categorieDisplayedProperty } from './constants'
 
 class AppDetailContainer extends Component {
   constructor(props) {
@@ -41,11 +42,12 @@ class AppDetailContainer extends Component {
   }
 
   render(){
+    let propertyToDisplay = categorieDisplayedProperty[this.props.currentCategorie]
     return (
       <div style={this.props.containersStyle}>
         <Card rounded={this.props.rounded} zDepth={this.props.zDepth}>
           <CardTitle
-            title={this.props.currentItem.name} subtitle="" />
+            title={this.props.currentItem[propertyToDisplay]} subtitle="" />
           <CardText>
             {this.state.itemDetailsDiv}
           </CardText>
