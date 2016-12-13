@@ -2,21 +2,42 @@ import React, { Component } from 'react';
 
 import {Card, CardTitle, CardText} from 'material-ui/Card';
 
-//USE STATE
-let itemDivs
+import AppDetailsLine from './AppDetailsLine'
 
 class AppDetailContainer extends Component {
-
-  componentWillMount() {
-   this.makeDiv(this.props.currentItem)
+  constructor(props) {
+    super(props);
+    this.state = {
+      itemDetailsDiv : '',
+    };
   }
 
-  componentWillUpdate() {
-   this.makeDiv(this.props.currentItem)
+  componentWillMount() {
+    this.setState({ itemDetailsDiv: this.makeDiv(this.props.currentItem)})
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.currentItem !== this.props.currentItem){
+      this.setState({ itemDetailsDiv: this.makeDiv(this.props.currentItem)})
+    }
   }
 
   makeDiv(item) {
-    itemDivs = Object.entries(item)
+
+    let itemsDivs = []
+
+    for (let i = 0; i < Object.keys(item).length; i++){
+      let detailKey = Object.keys(item)[i]
+      let detailValue = item[Object.keys(item)[i]]
+      itemsDivs.push(
+        <AppDetailsLine
+        key={detailKey}
+        detailKey={detailKey}
+        value={detailValue}/>
+      )
+    }
+
+    return itemsDivs
   }
 
   render(){
@@ -26,15 +47,7 @@ class AppDetailContainer extends Component {
           <CardTitle
             title={this.props.currentItem.name} subtitle="" />
           <CardText>
-            //////FILLTEXT
-            <p><b>height</b>{this.props.currentItem.height}</p>
-            <p><b>mass</b> 77</p>
-            <p><b>hair_color</b> Blond</p>
-            <p><b>skin_color</b> Caucasian</p>
-            <p><b>eye_color</b> blue</p>
-            <p><b>birth_year</b> 19 BBY</p>
-            <p><b>gender</b> Male</p>
-            //////FILLTEXT
+            {this.state.itemDetailsDiv}
           </CardText>
         </Card>
       </div>
