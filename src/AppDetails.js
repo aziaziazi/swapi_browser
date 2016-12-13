@@ -19,7 +19,7 @@ class AppDetailContainer extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentItem !== this.props.currentItem){
-      this.setState({ itemDetailsDiv: this.makeDiv(this.props.currentItem)})
+      this.setState({ itemDetailsDiv: this.makeDiv(nextProps.currentItem)})
     }
   }
 

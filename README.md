@@ -39,6 +39,8 @@ It's supposed to let me show my React competences. However as I never used it be
 -  Make the title as top bar ?
 -  Style
 -  get rid of Table element to use the same style as menu ? (but table is asked by the job test)
+-  Bind Details links to app currentItem state
+-  Auto Fetch pictore on google image based on name
 
 # Notes
 
