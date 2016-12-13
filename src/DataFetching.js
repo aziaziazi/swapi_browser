@@ -1,9 +1,10 @@
 import axios from 'axios'
 import { baseURL } from './constants';
 
-export const getData = (params) => {
+export const getData = (params, wookiee) => {
+  let wookieParam = wookiee ? '?format=wookiee' : '';
   return axios
-    .get(baseURL + params)
+    .get(baseURL + params + wookieParam)
     .then(response => {
       return response.data
     })

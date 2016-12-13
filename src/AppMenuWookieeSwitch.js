@@ -1,13 +1,24 @@
 import React from 'react';
 
 import MenuItem from 'material-ui/MenuItem';
+import Toggle from 'material-ui/Toggle';
 
-const style = {
-};
 
-const AppMenuWookieeSwitch = () => {
+
+const AppMenuWookieeSwitch = ({onWookieeSwitch}) => {
+  const style = {
+  height: '48px',
+  lineHeight: '48px',
+  whiteSpace: 'nowrap'
+  }
   return (
-    <MenuItem style={style} primaryText='Wookiee Switch' />
+    <MenuItem>
+      <Toggle
+        style={style}
+        label="Wookiee Switch"
+        onToggle={onWookieeSwitch}
+      />
+    </MenuItem>
   );
 }
 

@@ -2,8 +2,22 @@ import React, { Component } from 'react';
 
 import {Card, CardTitle, CardText} from 'material-ui/Card';
 
+//USE STATE
+let itemDivs
+
 class AppDetailContainer extends Component {
 
+  componentWillMount() {
+   this.makeDiv(this.props.currentItem)
+  }
+
+  componentWillUpdate() {
+   this.makeDiv(this.props.currentItem)
+  }
+
+  makeDiv(item) {
+    itemDivs = Object.entries(item)
+  }
 
   render(){
     return (
@@ -27,6 +41,7 @@ class AppDetailContainer extends Component {
 }
 
 AppDetailContainer.propTypes = {
+  currentItem: React.PropTypes.object.isRequired,
   rounded: React.PropTypes.bool.isRequired,
   zDepth: React.PropTypes.number.isRequired
 };

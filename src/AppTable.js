@@ -5,7 +5,6 @@ import Paper from 'material-ui/Paper';
 
 import AppTableNavigation from './AppTableNavigation';
 import { getData } from './DataFetching';
-import { categorieDisplayedProperty } from './constants';
 import Loading from './Loading';
 import { baseURL } from './constants';
 import AppTableEntrie from './AppTableEntrie';
@@ -32,9 +31,7 @@ class AppTable extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.currentCategorie !== this.props.currentCategorie){
       this.updateEntriesState(nextProps.currentCategorie)
-    }
   }
 
   handleClickNext(){
@@ -50,25 +47,19 @@ class AppTable extends Component {
   }
 
   updateEntriesState(param){
-    getData(param)
-      .then(data => {
-        // Find a nicer way to do that
-        let ArgNext
-        if (data.next) {
-          ArgNext = data.next.slice(baseURL.length)
-        } else {
-          ArgNext=''
-        }
+    let wookiee = this.props.wookieeSwitchToogled
 
-        let ArgPrevious
-        if (data.previous) {
-          ArgPrevious = data.previous.slice(baseURL.length)
-        } else {
-          ArgPrevious=''
-        }
+    getData(param, wookiee)
+      .then(data => {
+        // If next page available, slice the base URL and store the argument alone
+        // If no next page, return and empty argument
+        let ArgNext = data.next ? data.next.slice(baseURL.length) : ''
+        let ArgPrevious = data.previous ? data.previous.slice(baseURL.length) : ''
+
+        let entries = this.makeRowsDivs(data)
 
         this.setState({
-          entries: this.makeRowsDivs(data),
+          entries: entries,
           linkNext: ArgNext,
           linkPrevious: ArgPrevious
         })
@@ -80,12 +71,12 @@ class AppTable extends Component {
 
   makeRowsDivs(data) {
     const rowEntries = data.results;
-    const entriesNames = [];
+    const entriesArray = [];
 
     for (let i = 0; i < rowEntries.length; i++){
-      entriesNames.push(rowEntries[i])
+      entriesArray.push(rowEntries[i])
     }
-    return entriesNames.map((entrie, index) =>
+    return entriesArray.map((entrie, index) =>
       <AppTableEntrie
         key={index}
         entrie={entrie}
@@ -94,6 +85,7 @@ class AppTable extends Component {
   }
 
   render() {
+    console.log('___Rendering Table')
     if (this.state.entries){
       return (
         <div style={this.props.containersStyle}>

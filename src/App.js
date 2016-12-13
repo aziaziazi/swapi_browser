@@ -7,6 +7,7 @@ import AppTitle from './AppTitle';
 import AppTable from './AppTable';
 import AppDetails from './AppDetails';
 
+//TODO make only one object with the constants
 const flexboxContainerStyle={
   width:'100%',
   display: 'inline-flex',
@@ -32,16 +33,23 @@ class App extends Component {
     super(props);
     this.state = {
       currentCategorie : '',
-      currentItem: ''         // perhaps better to create an unique object with the two keys (or more)
+      currentItem: '',         // perhaps better to create an unique object with the two keys (or more)
+      wookieeSwitchToogled: false
     }
   }
 
+  // Why wrong syntax highlighting ?
   handleSelectCategorie = (e) => {
     this.setState({currentCategorie: e.target.innerHTML})
   }
 
   handleSelectItem = (arg) => {
     this.setState({currentItem: arg})
+  }
+
+  handleWookieeSwhitch = () => {
+    let switchedWookieeState  = !this.state.wookieeSwitchToogled
+    this.setState({ wookieeSwitchToogled: switchedWookieeState })
   }
 
   render() {
@@ -56,6 +64,8 @@ class App extends Component {
               rounded={rounded}
               zDepth={zDepth}
               onSelectCategorie={this.handleSelectCategorie}
+              onWookieeSwitch={this.handleWookieeSwhitch}
+              wookieeSwitchToogled={this.state.wookieeSwitchToogled}
             />
           { this.state.currentCategorie !== '' &&
             <AppTable
@@ -64,6 +74,7 @@ class App extends Component {
               zDepth={zDepth}
               currentCategorie={this.state.currentCategorie}
               onSelectItem={this.handleSelectItem}
+              wookieeSwitchToogled={this.state.wookieeSwitchToogled}
             />
           }
           { this.state.currentItem !== '' &&

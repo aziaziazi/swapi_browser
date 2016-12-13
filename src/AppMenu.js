@@ -24,16 +24,26 @@ class AppMenu extends Component {
     }
   }
 
-  // TODO Move that to AppMenuCategories ?
   componentWillMount() {
-    getData('')
-      .then(data => {
-        this.setState({categories: data});
-      //TODO should I catch error here too ?
-      });
+    this.fetchMenuCategories(this.props.wookieeSwitchToogled)
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.fetchMenuCategories(nextProps.wookieeSwitchToogled)
+  }
+
+  fetchMenuCategories(wookiee){
+    getData('', wookiee)
+      .then(data => {
+        this.setState({categories: data});
+      })
+      .catch(error => {
+        console.log(error)
+      });
+    }
+
   render() {
+    console.log('___Rendering Menu')
     if (this.state.categories){
       categoriesName = Object.keys(this.state.categories) //Should I do that in Child instead ?
       return (
@@ -44,7 +54,7 @@ class AppMenu extends Component {
                 categories={categoriesName}
                 onSelectCategorie={this.props.onSelectCategorie}/>
               <Divider />
-              <AppMenuWookieeSwitch />
+              <AppMenuWookieeSwitch onWookieeSwitch={this.props.onWookieeSwitch}/>
             </Menu>
           </Paper>
         </div>
