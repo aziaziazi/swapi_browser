@@ -49,28 +49,22 @@ class AppTable extends Component {
   }
 
   updateEntriesState(param){
+    this.setState({ entries: null})
+
     getData(param)
       .then(data => {
-        // Find a nicer way to do that
-        let ArgNext
-        if (data.next) {
-          ArgNext = data.next.slice(baseURL.length)
-        } else {
-          ArgNext=''
-        }
 
-        let ArgPrevious
-        if (data.previous) {
-          ArgPrevious = data.previous.slice(baseURL.length)
-        } else {
-          ArgPrevious=''
-        }
+        let ArgNext = data.next ? data.next.slice(baseURL.length) : ''
+        let ArgPrevious = data.previous ? data.previous.slice(baseURL.length) : ''
+
+        let entries = this.makeRowsDivs(data)
 
         this.setState({
-          entries: this.makeRowsDivs(data),
+          entries: entries,
           linkNext: ArgNext,
           linkPrevious: ArgPrevious
         })
+
       })
       .catch(error => {
         console.log(error)
