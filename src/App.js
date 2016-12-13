@@ -37,11 +37,16 @@ class App extends Component {
   }
 
   handleSelectCategorie = (e) => {
-    this.setState({currentCategorie: e.target.innerHTML})
+    this.setState({
+      currentCategorie: e.target.innerHTML,
+      currentItem: ''
+    })
   }
 
   handleSelectItem = (arg) => {
-    this.setState({currentItem: arg})
+    this.setState({
+      currentItem: arg
+    })
   }
 
   render() {
