@@ -5,7 +5,6 @@ import Paper from 'material-ui/Paper';
 
 import AppTableNavigation from './AppTableNavigation';
 import { getData } from './DataFetching';
-import { categorieDisplayedProperty } from './constants';
 import Loading from './Loading';
 import { baseURL } from './constants';
 import AppTableEntrie from './AppTableEntrie';
@@ -79,13 +78,7 @@ class AppTable extends Component {
   }
 
   makeRowsDivs(data) {
-    const rowEntries = data.results;
-    const entriesNames = [];
-
-    for (let i = 0; i < rowEntries.length; i++){
-      entriesNames.push(rowEntries[i])
-    }
-    return entriesNames.map((entrie, index) =>
+    return data.results.map((entrie, index) =>
       <AppTableEntrie
         key={index}
         entrie={entrie}
