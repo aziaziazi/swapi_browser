@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import AppMenu from './AppMenu';
-import AppTitle from './AppTitle';
+import AppTitleBar from './AppTitleBar';
 import AppTable from './AppTable';
 import AppDetails from './AppDetails';
 
@@ -24,7 +24,7 @@ const containersStyle={
   flexBasis:'0',
 }
 
-const zDepth=2;
+const zDepth=1;
 const rounded=false;
 
 class App extends Component {
@@ -53,7 +53,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div style={flexboxContainerStyle}>
-            <AppTitle
+            <AppTitleBar
               containersStyle={containersStyle}
             />
             <AppMenu
