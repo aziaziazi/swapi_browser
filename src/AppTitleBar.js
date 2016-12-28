@@ -5,7 +5,7 @@ import AppBar from 'material-ui/AppBar';
 import { title, githubURL } from './constants';
 
 const titleStyle = {
-  textAlign:'center'
+  textAlign:'center',
 }
 
 class AppTitleBar extends Component {
@@ -19,6 +19,7 @@ class AppTitleBar extends Component {
       <AppBar
         title={title}
         style={titleStyle}
+        onTitleTouchTap={this.props.onClickOnTitle}
         iconClassNameLeft='fa fa-github'
         onLeftIconButtonTouchTap={this.handleClickLeftIcon}
       />

@@ -52,11 +52,20 @@ class App extends Component {
     })
   }
 
+  handleClickOnTitle = () => {
+    this.setState({
+      currentCategorie: '',
+      currentItem: ''
+    })
+  }
+
   render() {
     return (
       <MuiThemeProvider>
         <div style={flexboxContainerStyle}>
-            <AppTitleBar/>
+            <AppTitleBar
+              onClickOnTitle={this.handleClickOnTitle}
+            />
             <AppMenu
               containersStyle={containersStyle}
               rounded={rounded}
