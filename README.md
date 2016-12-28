@@ -1,6 +1,4 @@
-*Created with [create-react-app](./README\create-react-app.md)*
-
-![cap](./cap.png "cap")
+![demo](./demo.gif "demo")
 
 # Test
 
@@ -31,17 +29,19 @@ It's supposed to let me show my React competences. However as I never used it be
 - fix divider problem on top of wookie switch ~~and on top of data table arrows~~
 - Change State of categories and entries from containing data (and process in render function) to containing result to render (and process async in componentwillmount)
 -  Implement Cache for cat items (fetch next and previous items in advence ? / strore direcly the object instead of link)
--  No loading with table updating
+-  ~~No loading with table updating~~
 -  In AppTable, group entries, linkNext and linkPrevious states in an object
 -  Make selected cat/table appear selected
 -  Use fetch() instead of axios ?
 -  implements [wookiee translator](http://swapi.co/documentation#wookiee) => In progree in 'feat/wookiee' branch
--  Make the title as top bar ?
--  Style
+-  ~~Make the title as top bar~~
+-  Fix horizontal alignment of title (github icon makes it shift)
 -  get rid of Table element to use the same style as menu ? (but table is asked by the job test)
 -  Bind Details links to app currentItem state
--  Auto Fetch pictore on google image based on name
+-  Auto Fetch picture on google image based on name
 
 # Notes
 
 https://fr.pinterest.com/camillegabrieli/data-tables/
+
+*Created with [create-react-app](./README\create-react-app.md)*

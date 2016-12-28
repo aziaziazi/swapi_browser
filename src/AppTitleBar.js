@@ -6,6 +6,7 @@ import { title, githubURL } from './constants';
 
 const titleStyle = {
   textAlign:'center',
+  backgroundColor:'black'
 }
 
 class AppTitleBar extends Component {
