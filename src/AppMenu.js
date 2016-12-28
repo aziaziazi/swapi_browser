@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 
 import Paper from 'material-ui/Paper';
 import Menu from 'material-ui/Menu';
-import Divider from 'material-ui/Divider';
 
-import AppMenuWookieeSwitch from './AppMenuWookieeSwitch';
 import AppMenuCategories from './AppMenuCategories';
 import { getData } from './DataFetching';
 import Loading from './Loading';
@@ -43,8 +41,6 @@ class AppMenu extends Component {
               <AppMenuCategories
                 categories={categoriesName}
                 onSelectCategorie={this.props.onSelectCategorie}/>
-              <Divider />
-              <AppMenuWookieeSwitch />
             </Menu>
           </Paper>
         </div>
