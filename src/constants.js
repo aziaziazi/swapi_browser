@@ -1,5 +1,7 @@
 export const title = "StarWars API Browser";
 
+export const githubURL = "https://github.com/aziaziazi/swapi_browser";
+
 export const categories = [
   'People',
   'Planet',

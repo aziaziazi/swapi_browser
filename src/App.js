@@ -56,9 +56,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <div style={flexboxContainerStyle}>
-            <AppTitleBar
-              containersStyle={containersStyle}
-            />
+            <AppTitleBar/>
             <AppMenu
               containersStyle={containersStyle}
               rounded={rounded}
